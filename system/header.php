@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/app.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/swiper.min.css">
+    <script src="<?php echo base_url(); ?>/ckeditor/ckeditor.js"></script>
     <title>Timsukien - Mạng chia sẻ sự kiện</title>
   </head>
 
