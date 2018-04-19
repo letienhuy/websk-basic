@@ -4,13 +4,19 @@
         header('Location: ../index.php');
     }
     $diadiem = db_where('diadiem', ['id', '>', 0]);
+    $loi = "";
+    if(isset($_POST['tao'])){
+        
+    }
 ?>
 <div id="content">
     <div class="container">
         <div class="list">
             <h3 class="title">TẠO SỰ KIỆN MỚI</h3>
             <form method="post" id="tao-sk" enctype="media">
-            <div id="result"></div>
+            <?php if($loi){ ?>
+                <div class="alert alert-danger"><?php echo $loi; ?></div>
+            <?php } ?>
             <div class="form-group">
                 <label for="email">Tên sự kiện:</label>
                 <input type="text" class="form-control" name="name">
