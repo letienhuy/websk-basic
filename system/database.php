@@ -54,8 +54,9 @@
         $query = "update $table set ";
         connect();
         foreach($array as $key => $val){
-            $query .= "$key = '$val' ";
+            $query .= "$key = '$val', ";
         }
+        $query = trim($query, ', ');
         if(sizeof($where) == 3){
             $query .= " where $where[0] $where[1] '$where[2]'";
         } else {
@@ -89,5 +90,29 @@
             return true;
         }
         return false;
+    }
+    $user = null;
+    if(isset($_COOKIE['userid'])){
+        $user = db_where('admin', ['id', $_COOKIE['userid']])[0];
+    }
+    function db_delete($table, $array){
+        global $cnn;
+        $query = "delete from $table ";
+        connect();
+        if(sizeof($array) == 3){
+            $query .= " where $array[0] $array[1] '$array[2]'";
+        } else {
+            $query .= " where $array[0] = '$array[1]'";
+        }
+        $result = mysqli_query($cnn, $query);
+        disconnect();
+        if($result){
+            return true;
+        }
+        return false;
+    }
+    $user = null;
+    if(isset($_COOKIE['userid'])){
+        $user = db_where('admin', ['id', $_COOKIE['userid']])[0];
     }
 ?>

@@ -1,11 +1,6 @@
 <?php
   ob_start();
   require_once('database.php');
-  $user = null;
-  if(isset($_COOKIE['userid'])){
-    $user = db_where('admin', ['id', $_COOKIE['userid']])[0];
-  }
-
 ?>
   <!DOCTYPE html>
   <html lang="en">

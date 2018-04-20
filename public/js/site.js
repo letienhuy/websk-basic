@@ -21,3 +21,45 @@ $('#dat-ve').ajaxForm({
         $('#result').html($('<div/>').addClass('alert alert-danger').text(err.responseJSON.error));
     }
 });
+$('#tao-sk').ajaxForm({
+    url: 'taosk.php',
+    dataType: "JSON",
+    success: function(res) {
+        alert(res.success);
+        $('#tao-sk').resetForm();
+    },
+    error: function(err) {
+        $('#result').html($('<div/>').addClass('alert alert-danger').text(err.responseJSON.error));
+    }
+});
+$('#edit-sk').ajaxForm({
+    url: 'editsk.php?id=' + $('#edit-sk').data('id'),
+    dataType: "JSON",
+    success: function(res) {
+        alert(res.success);
+    },
+    error: function(err) {
+        $('#result').html($('<div/>').addClass('alert alert-danger').text(err.responseJSON.error));
+    }
+});
+$('#tao-dd').ajaxForm({
+    url: 'taodd.php',
+    dataType: "JSON",
+    success: function(res) {
+        alert(res.success);
+        $('#tao-dd').resetForm();
+    },
+    error: function(err) {
+        $('#result').html($('<div/>').addClass('alert alert-danger').text(err.responseJSON.error));
+    }
+});
+$('#edit-dd').ajaxForm({
+    url: 'editdd.php?id=' + $('#edit-dd').data('id'),
+    dataType: "JSON",
+    success: function(res) {
+        alert(res.success);
+    },
+    error: function(err) {
+        $('#result').html($('<div/>').addClass('alert alert-danger').text(err.responseJSON.error));
+    }
+});

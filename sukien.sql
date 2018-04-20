@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2018 at 06:07 PM
+-- Generation Time: Apr 20, 2018 at 06:19 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.1.15
 
@@ -59,8 +59,9 @@ CREATE TABLE `diadiem` (
 --
 
 INSERT INTO `diadiem` (`id`, `name`) VALUES
-(1, 'Hà Nội'),
-(2, 'TP. Hồ Chí Minh');
+(0, 'Khác'),
+(2, 'TP. Hồ Chí Minh'),
+(4, 'Yên Bái');
 
 -- --------------------------------------------------------
 
@@ -75,6 +76,7 @@ CREATE TABLE `hoadon` (
   `diachi` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
+  `tickets` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `status` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -83,12 +85,12 @@ CREATE TABLE `hoadon` (
 -- Dumping data for table `hoadon`
 --
 
-INSERT INTO `hoadon` (`id`, `id_sukien`, `name`, `diachi`, `email`, `phone`, `price`, `status`) VALUES
-(1, 1, 'Huy Le Tien', 'Hà Nội', 'letienhuy.dev@gmail.com', '01203674653', 30000, 0),
-(3, 1, 'Huy Le Tien', 'Hà Nội', 'letienhuy.dev@gmail.com', '01203674653', 30000, 0),
-(4, 1, 'Huy Le Tien', 'Hà Nội', 'letienhuy.dev@gmail.com', '01203674653', 30000, 0),
-(5, 1, 'Huy Le Tien', 'Hà Nội', 'letienhuy.dev@gmail.com', '01203674653', 30000, 0),
-(6, 1, 'Huy Le Tien', 'Hà Nội', 'letienhuy.dev@gmail.com', '01203674653', 30000, 0);
+INSERT INTO `hoadon` (`id`, `id_sukien`, `name`, `diachi`, `email`, `phone`, `tickets`, `price`, `status`) VALUES
+(1, 1, 'Huy Le Tien', 'Hà Nội', 'letienhuy.dev@gmail.com', '01203674653', 0, 30000, 1),
+(3, 1, 'Huy Le Tien', 'Hà Nội', 'letienhuy.dev@gmail.com', '01203674653', 0, 30000, 0),
+(4, 1, 'Huy Le Tien', 'Hà Nội', 'letienhuy.dev@gmail.com', '01203674653', 0, 30000, 0),
+(5, 1, 'Huy Le Tien', 'Hà Nội', 'letienhuy.dev@gmail.com', '01203674653', 0, 30000, 0),
+(6, 1, 'Huy Le Tien', 'Hà Nội', 'letienhuy.dev@gmail.com', '01203674653', 0, 30000, 0);
 
 -- --------------------------------------------------------
 
@@ -115,8 +117,7 @@ CREATE TABLE `sukien` (
 --
 
 INSERT INTO `sukien` (`id`, `name`, `poster`, `price`, `time_start`, `time_stop`, `about`, `total_tickets`, `id_diadiem`, `diachi`, `date_start`) VALUES
-(1, 'Coatings Expo Vietnam 2018', 'https://sukien.net/uploads/images/event-coatings-expo-vietnam-2018-coat-son-mau-1517566309.png', 10000, '08:00:00', '10:00:00', 'Coatings Expo Việt Nam 2018 - Triển lãm Quốc tế lần thứ 5 chuyên ngành công nghiệp Sơn phủ - Mực in Việt Nam 2018\r\n\r\nNgày diễn ra triển lãm: 13 -15 tháng 6 năm 2018\r\n\r\nThời gian mở cửa: từ 9.00 sáng – 17.00 chiều\r\n\r\nĐịa điểm tổ chức: Trung tâm Hội chợ và Triển lãm Sài Gòn (SECC),799 Nguyễn Văn Linh, Tân Phú, Quận 7, Hồ Chí Minh\r\n\r\nTrên thị trường sơn và chất phủ Việt Nam nói chung, các sản phẩm của doanh nghiệp trong nước đã có thị phần đáng kể. Thị trường sơn và chất phủ là một bức tranh đa sắc với cơ hội và thách thức đan xen lẫn nhau cho cả doanh nghiệp trong nước lẫn nước ngoài. Hiên nay, chính phủ đang chú trọng phát triển ngành công nghiệp sơn - mực in theo hướng từng bước loại bỏ các công nghệ, thiết bị lạc hậu bằng các công nghệ, thiết bị tiên tiến, hạn chế sử dụng các nguyên liệu, hóa chất nguy hại tới môi trường sinh thái và sức khỏe con người, tạo ra các sản phẩm có chất lượng tốt và giá trị cao. Tập trung đầu tư vào các nhóm sản phẩm có giá trị sử dụng cao, đặc biệt chú trọng đầu tư phát triển sản xuất các loại nhựa tạo màng, bột màu, hóa chất, phụ gia cho ngành. Đây là cơ hội tiềm năng cho các doanh nghiệp sản xuất/ cung cấp máy móc- trang thiết bị- hóa chất….. ngành sơn phủ và mực in.\r\n\r\nĐược sự ủng hộ mạnh mẽ của Cục Hóa chất - Bộ Công Thương, Hiệp hội Sơn và Mực in Việt Nam (VPIA), Triển lãm Coatings Expo Việt Nam 2018 do công ty dịch vụ quảng cáo và triển lãm Minh Vi (VEAS) phối hợp Trung tâm CNCIC tổ chức, sẽ diễn ra vào 13-15 tháng 6 năm 2018 tại trung tâm hội chợ và triển lãm Sài Gòn SECC, Quận 7, Hồ Chí Minh.\r\n', 50, 2, '35 Nguyễn Chánh,Phước NGuyên, TP Bà Rịa, BRVT', '2018-04-29'),
-(2, 'Diễn đàn thương hiệu Việt B2B', 'https://sukien.net/uploads/images/event-dien-dan-thuong-hieu-viet-b2b-banner-sk-to-tr-n-sukien-net-1522140307.jpg', 0, '13:00:00', '16:00:00', '<img alt=\"\" src=\"/ckfinder/userfiles/chamlovie@gmail.com/images/Slide1.JPG\" style=\"width: 960px; height: 720px;\" /></p>\r\n\r\n<p><span style=\"font-size:20px;\"><span style=\"color:#d35400;\"><strong>V&Agrave; Đ&Acirc;Y L&Agrave; GIẢI PH&Aacute;P CH&Uacute;NG T&Ocirc;I MUỐN THỰC HIỆN C&Ugrave;NG C&Aacute;C NH&Agrave; CUNG CẤP THƯƠNG HIỆU VIỆT:</strong></span></span></p>\r\n\r\n<p><img alt=\"\" src=\"/ckfinder/userfiles/chamlovie@gmail.com/images/gi%E1%BA%A3i%20ph%C3%A1p%20Avina.png\" style=\"width: 841px; height: 553px;\" /></p>\r\n\r\n<p><img alt=\"\" src=\"/ckfinder/userfiles/chamlovie@gmail.com/images/Presentation1.jpg\" style=\"width: 960px; height: 720px;\" /></p>\r\n\r\n<p><span style=\"font-size:20px;\"><span style=\"color:#d35400;\"><strong>5 LỢI &Iacute;CH LỚN NHẤT D&Agrave;NH CHO C&Aacute;C DOANH NGHIỆP THAM DỰ SỰ KIỆN</strong></span></span></p>\r\n\r\n<p><img alt=\"\" src=\"/ckfinder/userfiles/chamlovie@gmail.com/images/5%20l%E1%BB%A3i%20%C3%ADch%20doanh%20nghi%E1%BB%87p%20s%E1%BA%BD%20nh%E1%BA%ADn%20%C4%91%C6%B0%E1%BB%A3c%20khi%20tham%20gia%20sk.png\" style=\"width: 1450px; height: 938px;\" /></p>\r\n\r\n<p><img alt=\"\" src=\"/ckfinder/userfiles/chamlovie@gmail.com/images/Slide3.JPG\" style=\"width: 960px; height: 720px;\" /></p>\r\n\r\n<p><img alt=\"\" src=\"/ckfinder/userfiles/chamlovie@gmail.com/images/s%C3%A1ng%20l%E1%BA%ADp%20Th%C3%B9y%20Ch%C3%A2m.jpg\" style=\"width: 960px; height: 720px;\" /></p>\r\n\r\n<p><span style=\"font-size:20px;\"><span style=\"color:#d35400;\"><b><span style=\"line-height:115%\"><span style=\"font-family:&quot;Times New Roman&quot;,&quot;serif&quot;\">ĐIỀU KIỆN THAM GIA</span></span></b></span></span></p>\r\n\r\n<p><span style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style=\"font-family:&quot;Times New Roman&quot;,&quot;serif&quot;\">1, Ho&agrave;n th&agrave;nh ph&iacute; tham gia với BTC trước&nbsp; ng&agrave;y diễn ra sự kiện (đối với loại v&eacute;&nbsp; Super VIP v&agrave; v&eacute; VIP)</span></span></span></p>\r\n\r\n<p><span style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style=\"font-family:&quot;Times New Roman&quot;,&quot;serif&quot;\">2. Điền đầy đủ th&ocirc;ng tin về Họ v&agrave; t&ecirc;n, email, sdt của người tham dự (đối với v&eacute; thường).</span></span></span></p>\r\n\r\n<p><img alt=\"\" src=\"/ckfinder/userfiles/chamlovie@gmail.com/images/qu%C3%A0%20t%E1%BA%B7ng%20d%C3%A0nh%20cho%20doanh%20nh%C3%A2n.jpg\" style=\"width: 960px; height: 720px;\" /></p>\r\n\r\n<p><span style=\"color:#d35400;\"><span style=\"font-size:20px;\">AVINA TR&Acirc;N QU&Yacute; SỰ CHIA SẺ DỰ &Aacute;N N&Agrave;Y C&Ugrave;NG CỘNG ĐỒNG NH&Agrave; CUNG CẤP THƯƠNG HIỆU VIỆT!</span></span></p>\r\n\r\n<p><span style=\"color:#d35400;\"><span style=\"font-size:20px;\">H&Acirc;N HẠNH ĐƯỢC Đ&Oacute;N TIẾP V&Agrave; GẶP GỠ QU&Yacute; DOANH NH&Acirc;N!</span></span></p>\r\n\r\n<p>&nbsp;</p>', 50, 1, '35 Nguyễn Chánh,Phước NGuyên, TP Bà Rịa, BRVT', '2018-04-30');
+(14, 'Sự kiện Triển lãm Quốc tế Công nghệ Môi trường và Năng lượng Năm 2018', 'https://sukien.net/uploads/images/event-su-kien-trien-lam-quoc-te-cong-nghe-moi-truong-va-nang-luong-nam-2018-1350-x-500-1524101021.jpg', 10000, '10:00:00', '17:00:00', '<p>&nbsp;</p>\n\n<p><strong>THƯ MỜI&nbsp;</strong></p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>K&iacute;nh gửi&nbsp;Anh/Chị,</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p><br />\n<br />\nThay mặt&nbsp;<strong>Ban tổ chức Triển l&atilde;m Quốc tế C&ocirc;ng nghệ M&ocirc;i trường v&agrave; Năng lượng 2018 (ENTECH 2018)</strong>, ch&uacute;ng t&ocirc;i tr&acirc;n trọng k&iacute;nh mời&nbsp;<strong>Qu&yacute; c&ocirc;ng ty</strong>&nbsp;tham dự&nbsp;<strong>Triển l&atilde;m &quot;ENTECH 2018&quot;&nbsp;- Top 7 Triển l&atilde;m hấp dẫn doanh nghiệp nhất do Bộ tri thức Kinh tế H&agrave;n Quốc khuyến nghị.</strong></p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<h2>Những ai tham gia triển l&atilde;m:</h2>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>Hội chợ thu h&uacute;t hơn 180 đơn vị trong v&agrave; ngo&agrave;i nước tham gia triển l&atilde;m. C&aacute;c c&ocirc;ng ty hoạt động trong những l&atilde;nh vực sau:</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>Sản phẩm v&agrave; c&ocirc;ng nghệ tiết kiệm năng lượng</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>Năng lượng t&aacute;i tạo, năng lượng mới, nguồn năng lượng</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>Giao th&ocirc;ng vận tải, Xăng dầu &amp; kh&iacute; đốt</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>Than &amp; năng lượng tập hợp</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>Tư vấn C&aacute;c dịch vụ tư vấn, phần mềm quản l&yacute;, kết quả nghi&ecirc;n cứu phục vụ hoạt động tiết kiệm năng lượng: tổ chức, doanh nghiệp&hellip;</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>C&aacute;c sản phẩm gia dụng hiệu suất cao, tiết kiệm năng lượng</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>Sản phẩm c&ocirc;ng nghệ xử l&yacute; v&agrave; bảo vệ m&ocirc;i trường</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>C&ocirc;ng nghệ xử l&yacute; chất thải c&ocirc;ng nghiệp</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>C&ocirc;ng nghệ xử l&yacute; m&ocirc;i trường phục vụ sinh hoạt</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>Quan trắc, ph&acirc;n t&iacute;ch m&ocirc;i trường;</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>Tư vấn m&ocirc;i trường v&agrave; chuyển giao c&ocirc;ng nghệ Ứng ph&oacute; sự cố m&ocirc;i trường, &ocirc; nhiễm do tr&agrave;n dầu</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p><br />\n<br />\nSự kiện sẽ được diễn ra v&agrave;o&nbsp;<strong>ng&agrave;y 10 th&aacute;ng 5 năm 2018 tại&nbsp;799 Nguyễn Văn Linh, Phường T&acirc;n Ph&uacute;, Quận 7, Th&agrave;nh phố Hồ Ch&iacute;&nbsp;Minh.</strong><br />\n<br />\n<br />\n<br />\nSự kiện sẽ l&agrave;&nbsp;<strong>cơ hội xuất sắc</strong>&nbsp;để&nbsp;<strong>Qu&yacute; C&ocirc;ng ty</strong>:<br />\n<br />\n&nbsp;<br />\n<br />\n<em>1. Tiếp x&uacute;c với kh&aacute;ch h&agrave;ng tiềm năng v&agrave; đối thủ, đ&aacute;nh gi&aacute; xu hướng ph&aacute;t triển thị trường, thị hiếu ti&ecirc;u d&ugrave;ng.<br />\n<br />\n2. Quảng b&aacute; h&igrave;nh ảnh, thương hiệu c&ocirc;ng ty, khẳng định vị thế của m&igrave;nh tr&ecirc;n trường quốc tế.<br />\n<br />\n3. Mở rộng, thiết lập mối quan hệ với đối t&aacute;c Quốc tế.</em><br />\n<br />\n<br />\n<br />\nĐặc biệt ch&uacute;ng t&ocirc;i gửi đến&nbsp;<strong>Qu&yacute; C&ocirc;ng ty</strong>&nbsp;lời đề nghị hấp dẫn từ ph&iacute;a c&aacute;c c&ocirc;ng ty H&agrave;n Quốc về một&nbsp;<strong>buổi gặp gỡ trực tiếp</strong>. Th&ocirc;ng qua đ&oacute;, c&oacute; thể gi&uacute;p&nbsp;<strong>Qu&yacute; C&ocirc;ng ty</strong>&nbsp;c&oacute;&nbsp;Cơ hội&nbsp;<strong>hợp t&aacute;c với c&aacute;c đối t&aacute;c H&agrave;n Quốc.</strong></p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>Tr&acirc;n trọng,&nbsp;<br />\n<br />\n<strong>Ban tổ chức &quot;ENTECH 2018&quot;</strong><br />\n<br />\n<br />\n<br />\n&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p>&nbsp;</p>\n', 100, 0, 'Trung Tâm Hội Chợ Triển Lãm Sài Gòn SECC 799 Nguyễn Văn Linh, P: Tân Phú, Q:7, TP.HCM, Quận 7, Thành Phố Hồ Chí Minh ', '2018-05-10');
 
 --
 -- Indexes for dumped tables
@@ -160,7 +161,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `diadiem`
 --
 ALTER TABLE `diadiem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `hoadon`
@@ -172,7 +173,7 @@ ALTER TABLE `hoadon`
 -- AUTO_INCREMENT for table `sukien`
 --
 ALTER TABLE `sukien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

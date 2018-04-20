@@ -38,7 +38,8 @@
             'diachi' => $_POST['diachi'],
             'email' => $_POST['email'],
             'phone' => $_POST['phone'],
-            'price' => $sukien['price']*$_POST['ticket']
+            'price' => $sukien['price']*$_POST['ticket'],
+            'tickets' => $_POST['ticket']
         ]);
         $update = db_update('sukien', ['id', $sukien['id']], ['total_tickets' => $sukien['total_tickets']-$_POST['ticket']]);
         if($insert && $update){

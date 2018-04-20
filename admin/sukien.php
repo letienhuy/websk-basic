@@ -14,27 +14,13 @@
 <div id="content">
     <div class="container">
     <div class="row">
-    <div class="col-md-3 col-sm-4">
-        <div class="list">
-            <h1 class="title">Chức năng</h1>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <a href="sukien.php">QUẢN LÝ SỰ KIỆN</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="hoadon.php">QUẢN LÝ HOÁ ĐƠN</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="diadiem.php">QUẢN LÝ ĐỊA ĐIỂM</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="col-md-9 col-sm-8">
         <div class="list">
             <h1 class="title">
-                DANH SÁCH SỰ KIỆN
+                Quản lý sự kiện
             </h1>
+            <a href="taosk.php">
+                <button class="btn btn-success">Tạo sự kiện</button>
+            </a>
             <table class="table">
             <tr>
                 <th>ID</th>
@@ -50,14 +36,13 @@
                 <td><?php echo $item['price'] ?></td>
                 <td><?php echo $item['total_tickets'] ?></td>
                 <td>
-                <a href="edit-sk.php?id=<?php echo $item['id'] ?>">Sửa</a> | <a href="edit-sk.php?id=<?php echo $item['id'] ?>&action=delete">Xoá</a>
+                <a href="editsk.php?id=<?php echo $item['id'] ?>">Sửa</a> | <a href="editsk.php?id=<?php echo $item['id'] ?>&action=delete">Xoá</a>
                 </td>
             </tr>
             <?php } ?>
             </table>
         <?php echo paginate($_GET['page'], $total, $limit); ?>
         </div>
-    </div>
     </div>
     </div>
 </div>
